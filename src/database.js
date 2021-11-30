@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+
+// Conectar a Base de datos
 mongoose.connect('mongodb://localhost/pmlUser',{
     useNewUrlParser:true,
     useUnifiedTopology:true

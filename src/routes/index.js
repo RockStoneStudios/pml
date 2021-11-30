@@ -1,29 +1,22 @@
 const router= require('express').Router();
 
+//Importarcion de Controladores 
 const {Registrarse,VistaRegistrarse,MostrarTodo,Mostrar,BusquedaEspecifica,Eliminar,Actualizar,VistaActualizar} = require('../Controller/user.controller');
 
-// const router = Router();
-// const {unlink} = require('fs-extra');
-// const path = require('path');
-// const image = require('../models/User');
-
-// const Imagen = require('../models/User');
-
+//Vista Principal
 router.get('/',MostrarTodo);
 
+// VistaRegistro y Registro
 router.get('/upload',VistaRegistrarse);
 router.post('/upload',Registrarse);
 
-
+//VistaEspecifica
 router.get('/image/:id',BusquedaEspecifica);
 
+//Eliminar Usuario
 router.get('/image/:id/delete',Eliminar);
-// router.get('/image/:id/delete', async(req,res)=>{
-//     const img = await Imagen.findByIdAndDelete(req.params.id);
-//      await unlink(path.resolve('./src/public'+img.path));
-//      res.redirect('/');
-// });
 
+//VistaActualizacion y Actualizacion
 router.get('/update/:id',VistaActualizar);
 router.post('/update/:id',Actualizar);
 

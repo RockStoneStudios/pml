@@ -35,15 +35,10 @@ const storage = multer.diskStorage({
 });
 app.use(multer({storage:storage, limits : {fileSize : 5024}}).single('image'));
 
+//Routers
 app.use(require('./routes/index'))
-//Global Variables
 
-//Routes
-
-//Static Files
-
-//Start Server
-
+// Conectar el Servidor
 app.listen(app.get('port'),()=>{
      console.log('Iniciando puerto '+app.get('port')+' ....');
 });

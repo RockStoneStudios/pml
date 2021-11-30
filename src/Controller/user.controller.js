@@ -4,6 +4,8 @@ const path = require('path');
 const {Mongoose} = require('mongoose');
 const { ObjectId } = require('mongoose');
 
+
+// Registro
 const Registrarse = async(req,res)=>{
     const {nombre,apellido,tipo_documento,documento_identidad,correo,celular,fecha} = req.body;
      if(nombre.length<1) return res.status(400).json({message : "Ingresa Nombre"});
@@ -34,32 +36,34 @@ const Registrarse = async(req,res)=>{
      res.status(400).json(error);
  }
 }
-
+// Vista Registro
 const VistaRegistrarse = async(req,res)=>{
     res.render('upload');
 }
-
+//Vista Todo
 const MostrarTodo = async(req,res)=>{
     const users = await User.find();
    res.render('index',{users});
 }
+//
+// const Mostrar = async(req,res)=>{
+//     const user = await User.findById(req.params.id);
+//     res.render('profile',{user:user});
+// }
 
-const Mostrar = async(req,res)=>{
-    const user = await User.findById(req.params.id);
-    res.render('profile',{user:user});
-}
-
+//Vista Busqueda Especifica 
 const BusquedaEspecifica = async(req,res)=>{
     const user = await User.findById(req.params.id);
     res.render('profile',{user:user});
 }
-
+//Eliminar 
 const Eliminar = async(req,res)=>{
     const user= await User.findByIdAndDelete(req.params.id);
          await unlink(path.resolve('./src/public'+user.path));
          res.redirect('/');
 }
 
+//Actualizar
 const Actualizar = async(req,res)=>{
 
     
@@ -79,7 +83,7 @@ const Actualizar = async(req,res)=>{
       }
      
 
-
+///////////////////Vista Actualizar /////////////////////////
 
 const VistaActualizar = async(req,res)=>{
     const {id} = req.params.id;
@@ -91,7 +95,7 @@ const VistaActualizar = async(req,res)=>{
 }
 
 
-
+// Exportaciones
 module.exports = {
     Registrarse,
     VistaRegistrarse,
