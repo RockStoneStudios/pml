@@ -99,7 +99,7 @@ const VistaActualizar = async(req,res)=>{
 module.exports = {
     Registrarse,
     VistaRegistrarse,
-    Mostrar,
+ 
     MostrarTodo,
     BusquedaEspecifica,
     Eliminar,

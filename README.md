@@ -18,10 +18,12 @@ timeago
 uuid"
 nodemon
 
-5- El archivo "index.js" posee la configuracion del servidor el cual correra por el puerto 3000. el archivo "conexion.js" posee la configuracion de mongo 
+5. ##### El archivo "index.js" posee la configuracion del servidor el cual correra por el puerto 3000. el archivo "conexion.js" posee la configuracion de mongo el nombre de la dbs es pmlUser
 
-6- Para inicializar el servidor del Data Warehouse se debe ejecutar el comando npm run dev
+6. ##### Hecho esto use desde la carpeta src (npm run dev) verificar que el servidor indique en la consola que se ha iniciando Puerto 3000 y se ha conectado en la base de datos apenas crees el primer usuario Mongodb te genera la dbs.
 
-7- Hecho esto, verificar que el servidor indique en la consola que se ha iniciando Puerto 3000 y se ha conectado en la base de datos apenas crees el primer usuario Mongodb te genera la dbs.
 
-8- disfruta de la app
+7. 
+ #### Abra  localhost:3000 y vaya a Registrar e ingrese datos del Usuario luego vaya a view Profile para acceder a eliminar o actualizar usuario
+
+8. # disfruta de la app
