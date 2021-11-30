@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("partials/head")%>
+</head>
+<body>
+    <div class="container p-4">
+        <div class="row">
+           <div class="col-md-4 offset-md-4">
+            <div class="card animated fadeInDown">
+                <img src="<%= user.path %> " class="img-fluid">
+                <div class="card-body">
+                    <h5 class="card-title"><%=user.nombre%> <%=user.apellido%></h5>
+                    <p class="card-text"><%=user.correo%> </p>
+                    <p> Celular : <%=user.celular%></p>
+                    <p class="lead">Fecha</p>
+                    <p class="card-text lead"><%=user.fecha%></p>
+                </div>
+                <div class="card-footer">
+                    <h5 class="card-text">Tipo de documento <%=user.tipo_documento%></h5>
+                    <h5 class="card-text">#<%=user.documento_identidad%></h5>
+                </div>
+                <a href="/image/<%= user._id%>/delete" class="btn btn-danger btn-block">Delete Image</a>
+                <a href="/update/<%= user._id%>" class="btn btn-primary btn-block">Update User</a>
+            </div>
+         
+           </div> 
+              
+                
+        
+        </div>
+    </div>
+    
+</body>
+</html>

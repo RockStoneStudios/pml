@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("partials/head")%>
+    
+</head>
+ <body>
+     
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%=user._id%>" method="POST">
+                     <div class="form-group">
+                         <input type="text" name="nombre" class="form-control" value="<%= user.nombre%>">
+                     </div>
+                     <div class="form-group">
+                         <input type="text"  name= "apellido" class="form-control" value="<%= user.apellido%>">
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name = "tipo_documento"class="form-control" value="<%= user.tipo_documento%>">
+                     </div>
+                     <div class="form-group">
+                         <input type="text"  name="documento_identidad" class="form-control" value="<%= user.documento_identidad%>">
+                     </div>
+                     <div class="form-group">
+                        <input type="text"  name="correo" class="form-control" value="<%= user.correo%>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="fecha" class="form-control" value="<%=user.fecha%>">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" name = "image" class="custom-file-input" id="inputGroupFile02">
+                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                      </div>
+                      <br>
+                      <br>
+                      <button class="btn btn-primary btn-block" type="submit" >Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
