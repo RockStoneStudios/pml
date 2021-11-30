@@ -1,7 +1,7 @@
 {
   "name": "api-PML",
   "version": "1.0.0",
-  "description": "Subida de Imagenes Node-js estilo Pinteres",
+  "description": "Subida de Imagenes Node-js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1", 
