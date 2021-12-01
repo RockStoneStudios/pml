@@ -15,26 +15,32 @@ const Registrarse = async(req,res)=>{
      if(!correo.includes('@') && !correo.endsWith('.com')) return res.status(400).json({message : "Correo Invalido"});
      if(celular.length<7) return res.status(400).json({message : "Celular Invalido"});
 
-     const user = new User({
-         nombre,
-         apellido,
-         tipo_documento,
-         documento_identidad,
-         correo,
-         celular,
-         fecha : fecha ,
-         filename : req.file.filename,
-         path : '/img/uploads/'+req.file.filename,
-         originalname : req.file.mimetype,
-         size : req.file.size
-     });
- try{
-    const result = await user.save();
-    if(result) return res.redirect('/');
-    
- } catch(error){
-     res.status(400).json(error);
- }
+      const userEmail = await User.findOne({correo : correo});
+      if(!userEmail){
+
+          const user = new User({
+              nombre,
+              apellido,
+              tipo_documento,
+              documento_identidad,
+              correo,
+              celular,
+              fecha : fecha ,
+              filename : req.file.filename,
+              path : '/img/uploads/'+req.file.filename,
+              originalname : req.file.mimetype,
+              size : req.file.size
+          });
+      try{
+         const result = await user.save();
+         if(result) return res.redirect('/');
+         
+      } catch(error){
+          res.status(400).json(error);
+      }
+      }else {
+          res.status(400).json({message : "Correo en Uso"});
+      }
 }
 // Vista Registro
 const VistaRegistrarse = async(req,res)=>{

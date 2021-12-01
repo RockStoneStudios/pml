@@ -30,7 +30,8 @@ const UserSchema = new Schema({
      },
      correo : {
          type : String,
-         required : true
+         required : true,
+         unique : true
      },
      celular : {
          type : String,
